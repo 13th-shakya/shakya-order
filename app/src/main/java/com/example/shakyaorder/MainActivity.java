@@ -1,5 +1,6 @@
 package com.example.shakyaorder;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -12,6 +13,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import com.example.shakyaorder.databinding.ActivityMainBinding;
 
+@SuppressLint("SetTextI18n")
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
@@ -25,9 +27,9 @@ public class MainActivity extends AppCompatActivity {
                 String sugarLevel = bundle.getString("sugarLevel");
                 String iceLevel = bundle.getString("iceLevel");
 
-                binding.beverageNameDetailsTextView.setText(beverageName);
-                binding.sugarLevelDetailsTextView.setText(sugarLevel);
-                binding.iceLevelDetailsTextView.setText(iceLevel);
+                binding.beverageNameDetailsTextView.setText("飲料：" + beverageName);
+                binding.sugarLevelDetailsTextView.setText("甜度：" + sugarLevel);
+                binding.iceLevelDetailsTextView.setText("冰塊：" + iceLevel);
             }
         }
     });
